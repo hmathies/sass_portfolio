@@ -1,5 +1,74 @@
-$primary-color: #444;
+@import "config";
+//this makes it so if we have padding on anything it won't affect the height or width
+* {
+  box-sizing: border-box;
+}
 body {
+  @include background;
   background: $primary-color;
   color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+// Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+  // html font-size defaults to 16px and 1rem = 16px
+  // 6rem = 16 * 6
+  &.lg-heading {
+    font-size: 6rem;
+  }
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  height: 100%;
+  // nesting the icons is only going to affect the icons inside main
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+
+      &:hover {
+        color: $secondary-color;
+        //using a mixin
+        @include easeOut();
+      }
+    }
+  }
+
+  &#home {
+    // making it so the home page does not have scroll bars
+    overflow: hidden;
+    h1 {
+      // slicing off the top 20 out of 100 in the view
+      margin-top: 20vh;
+    }
+  }
 }
