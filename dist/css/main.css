@@ -148,10 +148,10 @@ main {
   main .icons {
     margin-top: 1rem; }
     main .icons a {
-      padding: 0.4rem; }
+      padding: 0.4rem;
+      transition: all 0.5s ease-out; }
       main .icons a:hover {
-        color: #ec12cf;
-        transition: all 0.5s ease-out; }
+        color: #ec12cf; }
   main#home {
     overflow: hidden; }
     main#home h1 {

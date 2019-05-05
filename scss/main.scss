@@ -57,11 +57,10 @@ main {
 
     a {
       padding: 0.4rem;
-
+      //using a mixin
+      @include easeOut();
       &:hover {
         color: $secondary-color;
-        //using a mixin
-        @include easeOut();
       }
     }
   }
